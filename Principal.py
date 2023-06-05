@@ -94,22 +94,22 @@ class App(QMainWindow):
         Arquivo  = barra_menu.addMenu('📁 Arquivo')
 
         meus_pets = QAction('❤ Meus pets', self)
-        Perfil.triggered.connect(self.teste)
+        meus_pets.triggered.connect(self.teste)
         Arquivo.addAction(meus_pets)
 
         Pets = barra_menu.addMenu('🐾 Pets')
 
         cachorro = QAction('🐕 Sobre os cães', self)
-        Perfil.triggered.connect(self.teste)
+        cachorro.triggered.connect(self.teste)
         Pets.addAction(cachorro)
 
         gatos = QAction('🐈 Sobre os gatos', self)
-        Perfil.triggered.connect(self.teste)
+        gatos.triggered.connect(self.teste)
         Pets.addAction(gatos)
 
 
     def teste(self):
-        pass
+        print('Click')
 
     def buttonClicked(self):
         print("Botao clicado")
