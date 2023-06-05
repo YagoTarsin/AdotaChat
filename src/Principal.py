@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QAction
 from PyQt5.QtGui import QIcon, QColor
 from PyQt5.QtCore import Qt
 from Marcio.src import FuncoesButtons
+import CadastroDePets
 
 
 class App(QMainWindow):
@@ -27,7 +28,7 @@ class App(QMainWindow):
         cadastro_button.setStyleSheet("background-color: transparent; border: 1px solid #000000")
         cadastro_button.setGeometry(0, 35, 269, 630)
         cadastro_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        cadastro_button.clicked.connect(self.buttonClicked)
+        cadastro_button.clicked.connect(self.ButtonCadastro)
         button_icon = QIcon('imagens/Cadastrar um novo pet.png')
         cadastro_button.setIcon(button_icon)
         cadastro_button.setIconSize(cadastro_button.size())  # ajustar o tamanho do ícone
@@ -72,37 +73,7 @@ class App(QMainWindow):
         self.show()
 
     def menu(self):
-        barra_menu = self.menuBar()
-        barra_menu.setStyleSheet("background-color: #202123;"
-                                 "color: white;"
-                                 "font-size: 20px")
-
-        menu_configuracoes = barra_menu.addMenu('⚙ Configurações')
-
-        Perfil = QAction('👥 Perfil', self)
-        Perfil.triggered.connect(self.teste)
-        menu_configuracoes.addAction(Perfil)
-
-        Discord = QAction('🤖 Discord', self)
-        Discord.triggered.connect(self.teste)
-        menu_configuracoes.addAction(Discord)
-
-        Arquivo  = barra_menu.addMenu('📁 Arquivo')
-
-        meus_pets = QAction('❤ Meus pets', self)
-        meus_pets.triggered.connect(self.teste)
-        Arquivo.addAction(meus_pets)
-
-        Pets = barra_menu.addMenu('🐾 Pets')
-
-        cachorro = QAction('🐕 Sobre os cães', self)
-        cachorro.triggered.connect(self.teste)
-        Pets.addAction(cachorro)
-
-        gatos = QAction('🐈 Sobre os gatos', self)
-        gatos.triggered.connect(self.teste)
-        Pets.addAction(gatos)
-
+        FuncoesButtons.menu(self)
 
     def teste(self):
         print('Click')
@@ -110,8 +81,13 @@ class App(QMainWindow):
     def buttonClicked(self):
         print("Botao clicado")
 
+    def ButtonCadastro(self):
+        self.Cadastro = CadastroDePets.TelaCadastro()
+        self.Cadastro.show()
+
     def ButtonVassouras(self):
         FuncoesButtons.AbrirSiteUnivassouras()
+
 
 
 if __name__ == "__main__":
