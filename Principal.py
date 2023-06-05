@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QAction
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QAction, QLabel
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import Qt
 
@@ -14,18 +14,18 @@ class App(QMainWindow):
         icone = QIcon('imagens/icone.png')
         self.setWindowIcon(icone)
 
-        #self.background_label = QLabel(self)
-        #self.background_label.setGeometry(0, 0, 1000, 800)
-        #pixmap = QPixmap('imagens/fundo.png')
-        #self.background_label.setPixmap(pixmap)
-        #self.background_label.setScaledContents(True)
+        self.background_label = QLabel(self)
+        self.background_label.setGeometry(0, 0, 1000, 800)
+        pixmap = QPixmap('imagens/fundo.png')
+        self.background_label.setPixmap(pixmap)
+        self.background_label.setScaledContents(True)
 
         self.menu()
 
 
         invisible_button = QPushButton(self)
         invisible_button.setStyleSheet("background-color: transparent; border: 1px solid #000000")
-        invisible_button.setGeometry(300, 100, 700, 210)
+        invisible_button.setGeometry(300, 170, 700, 210)
         invisible_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
         invisible_button.setAutoFillBackground(True)  # luz botão
         invisible_button.clicked.connect(self.buttonClicked)
@@ -35,7 +35,7 @@ class App(QMainWindow):
 
         invisible_button2 = QPushButton(self)
         invisible_button2.setStyleSheet("background-color: transparent")
-        invisible_button2.setGeometry(300, 311, 700, 210)
+        invisible_button2.setGeometry(300, 380, 700, 210)
         invisible_button2.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
         invisible_button2.setAutoFillBackground(True)   # luz botão
         invisible_button2.clicked.connect(self.buttonClicked)
@@ -45,13 +45,13 @@ class App(QMainWindow):
 
         invisible_button3 = QPushButton(self)
         invisible_button3.setStyleSheet("background-color: transparent")
-        invisible_button3.setGeometry(300, 522, 700, 210)
+        invisible_button3.setGeometry(300, 590, 700, 210)
         invisible_button3.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
         invisible_button3.setAutoFillBackground(True)  # luz botão
         invisible_button3.clicked.connect(self.buttonClicked)
-        button_icon2 = QIcon('imagens/Outros.png')
-        invisible_button3.setIcon(button_icon2)
-        invisible_button3.setIconSize(invisible_button2.size())  # ajustar o tamanho do ícone3
+        button_icon3 = QIcon('imagens/Outros.png')
+        invisible_button3.setIcon(button_icon3)
+        invisible_button3.setIconSize(invisible_button3.size())  # ajustar o tamanho do ícone3
         self.show()
 
     def menu(self):
