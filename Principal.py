@@ -65,7 +65,7 @@ class App(QMainWindow):
 
         univassouras_button = QPushButton(self)
         univassouras_button.setStyleSheet("background-color: transparent")
-        univassouras_button.setGeometry(5, 670, 964, 130)
+        univassouras_button.setGeometry(30, 680, 900, 100)
         univassouras_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
         univassouras_button.setAutoFillBackground(True)  # luz botão
         univassouras_button.clicked.connect(self.buttonClicked)
