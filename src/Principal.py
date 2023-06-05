@@ -1,7 +1,7 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QAction, QLabel
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QAction
 from PyQt5.QtGui import QIcon, QColor
 from PyQt5.QtCore import Qt
-import FuncoesButtons
+from Marcio.src import FuncoesButtons
 
 
 class App(QMainWindow):
@@ -27,7 +27,6 @@ class App(QMainWindow):
         cadastro_button.setStyleSheet("background-color: transparent; border: 1px solid #000000")
         cadastro_button.setGeometry(0, 35, 269, 630)
         cadastro_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        cadastro_button.setAutoFillBackground(True)  # luz botão
         cadastro_button.clicked.connect(self.buttonClicked)
         button_icon = QIcon('imagens/Cadastrar um novo pet.png')
         cadastro_button.setIcon(button_icon)
@@ -38,7 +37,6 @@ class App(QMainWindow):
         caninos_button.setStyleSheet("background-color: transparent; border: 1px solid #000000")
         caninos_button.setGeometry(269, 35, 700, 210)
         caninos_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        caninos_button.setAutoFillBackground(True)  # luz botão
         caninos_button.clicked.connect(self.buttonClicked)
         button_icon = QIcon('imagens/cachorro.png')
         caninos_button.setIcon(button_icon)
@@ -48,7 +46,6 @@ class App(QMainWindow):
         felinos_button.setStyleSheet("background-color: transparent")
         felinos_button.setGeometry(269, 245, 700, 210)
         felinos_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        felinos_button.setAutoFillBackground(True)   # luz botão
         felinos_button.clicked.connect(self.buttonClicked)
         button_icon2 = QIcon('imagens/Gatos.png')
         felinos_button.setIcon(button_icon2)
@@ -58,7 +55,6 @@ class App(QMainWindow):
         outros_button.setStyleSheet("background-color: transparent")
         outros_button.setGeometry(269, 455, 700, 210)
         outros_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        outros_button.setAutoFillBackground(True)  # luz botão
         outros_button.clicked.connect(self.buttonClicked)
         button_icon3 = QIcon('imagens/Outros.png')
         outros_button.setIcon(button_icon3)
@@ -67,12 +63,11 @@ class App(QMainWindow):
         univassouras_button = QPushButton(self)
         univassouras_button.setStyleSheet("background-color: transparent")
         univassouras_button.setGeometry(30, 680, 900, 100)
-        univassouras_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        univassouras_button.setAutoFillBackground(True)  # luz botão
+        univassouras_button.setCursor(Qt.PointingHandCursor)
         univassouras_button.clicked.connect(self.ButtonVassouras)
         button_icon4 = QIcon('imagens/univassouras.png')
         univassouras_button.setIcon(button_icon4)
-        univassouras_button.setIconSize(univassouras_button.size())  # ajustar o tamanho do ícone3
+        univassouras_button.setIconSize(univassouras_button.size())
 
         self.show()
 
