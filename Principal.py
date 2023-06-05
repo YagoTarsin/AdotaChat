@@ -7,35 +7,45 @@ class App(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle('PetMatch 🦴')
-        self.setGeometry(100, 100, 1000, 800)
-        self.setMinimumSize(1000, 800)
-        self.setMaximumSize(1000, 800)
+        self.setGeometry(100, 100, 969, 800)
+        self.setMinimumSize(969, 800)
+        self.setMaximumSize(969, 800)
 
         icone = QIcon('imagens/icone.png')
         self.setWindowIcon(icone)
 
-        self.background_label = QLabel(self)
-        self.background_label.setGeometry(0, 0, 1000, 800)
-        pixmap = QPixmap('imagens/fundo.png')
-        self.background_label.setPixmap(pixmap)
-        self.background_label.setScaledContents(True)
+        #self.background_label = QLabel(self)
+        #self.background_label.setGeometry(0, 0, 1000, 800)
+        #pixmap = QPixmap('imagens/fundo.png')
+        #self.background_label.setPixmap(pixmap)
+        #self.background_label.setScaledContents(True)
 
         self.menu()
 
-
         invisible_button = QPushButton(self)
         invisible_button.setStyleSheet("background-color: transparent; border: 1px solid #000000")
-        invisible_button.setGeometry(300, 170, 700, 210)
+        invisible_button.setGeometry(0, 35, 269, 630)
         invisible_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
         invisible_button.setAutoFillBackground(True)  # luz botão
         invisible_button.clicked.connect(self.buttonClicked)
-        button_icon = QIcon('imagens/cachorro.png')
+        button_icon = QIcon('imagens/Cadastrar um novo pet.png')
         invisible_button.setIcon(button_icon)
         invisible_button.setIconSize(invisible_button.size())  # ajustar o tamanho do ícone
 
+
+        invisible_button1 = QPushButton(self)
+        invisible_button1.setStyleSheet("background-color: transparent; border: 1px solid #000000")
+        invisible_button1.setGeometry(269, 35, 700, 210)
+        invisible_button1.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
+        invisible_button1.setAutoFillBackground(True)  # luz botão
+        invisible_button1.clicked.connect(self.buttonClicked)
+        button_icon = QIcon('imagens/cachorro.png')
+        invisible_button1.setIcon(button_icon)
+        invisible_button1.setIconSize(invisible_button1.size())  # ajustar o tamanho do ícone
+
         invisible_button2 = QPushButton(self)
         invisible_button2.setStyleSheet("background-color: transparent")
-        invisible_button2.setGeometry(300, 380, 700, 210)
+        invisible_button2.setGeometry(269, 245, 700, 210)
         invisible_button2.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
         invisible_button2.setAutoFillBackground(True)   # luz botão
         invisible_button2.clicked.connect(self.buttonClicked)
@@ -45,13 +55,24 @@ class App(QMainWindow):
 
         invisible_button3 = QPushButton(self)
         invisible_button3.setStyleSheet("background-color: transparent")
-        invisible_button3.setGeometry(300, 590, 700, 210)
+        invisible_button3.setGeometry(269, 455, 700, 210)
         invisible_button3.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
         invisible_button3.setAutoFillBackground(True)  # luz botão
         invisible_button3.clicked.connect(self.buttonClicked)
         button_icon3 = QIcon('imagens/Outros.png')
         invisible_button3.setIcon(button_icon3)
         invisible_button3.setIconSize(invisible_button3.size())  # ajustar o tamanho do ícone3
+
+        invisible_button4 = QPushButton(self)
+        invisible_button4.setStyleSheet("background-color: transparent")
+        invisible_button4.setGeometry(5, 670, 964, 130)
+        invisible_button4.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
+        invisible_button4.setAutoFillBackground(True)  # luz botão
+        invisible_button4.clicked.connect(self.buttonClicked)
+        button_icon4 = QIcon('imagens/univassouras.png')
+        invisible_button4.setIcon(button_icon4)
+        invisible_button4.setIconSize(invisible_button4.size())  # ajustar o tamanho do ícone3
+
         self.show()
 
     def menu(self):
