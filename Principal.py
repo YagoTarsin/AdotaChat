@@ -22,56 +22,56 @@ class App(QMainWindow):
 
         self.menu()
 
-        invisible_button = QPushButton(self)
-        invisible_button.setStyleSheet("background-color: transparent; border: 1px solid #000000")
-        invisible_button.setGeometry(0, 35, 269, 630)
-        invisible_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        invisible_button.setAutoFillBackground(True)  # luz botão
-        invisible_button.clicked.connect(self.buttonClicked)
+        cadastro_button = QPushButton(self)
+        cadastro_button.setStyleSheet("background-color: transparent; border: 1px solid #000000")
+        cadastro_button.setGeometry(0, 35, 269, 630)
+        cadastro_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
+        cadastro_button.setAutoFillBackground(True)  # luz botão
+        cadastro_button.clicked.connect(self.buttonClicked)
         button_icon = QIcon('imagens/Cadastrar um novo pet.png')
-        invisible_button.setIcon(button_icon)
-        invisible_button.setIconSize(invisible_button.size())  # ajustar o tamanho do ícone
+        cadastro_button.setIcon(button_icon)
+        cadastro_button.setIconSize(cadastro_button.size())  # ajustar o tamanho do ícone
 
 
-        invisible_button1 = QPushButton(self)
-        invisible_button1.setStyleSheet("background-color: transparent; border: 1px solid #000000")
-        invisible_button1.setGeometry(269, 35, 700, 210)
-        invisible_button1.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        invisible_button1.setAutoFillBackground(True)  # luz botão
-        invisible_button1.clicked.connect(self.buttonClicked)
+        caninos_button = QPushButton(self)
+        caninos_button.setStyleSheet("background-color: transparent; border: 1px solid #000000")
+        caninos_button.setGeometry(269, 35, 700, 210)
+        caninos_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
+        caninos_button.setAutoFillBackground(True)  # luz botão
+        caninos_button.clicked.connect(self.buttonClicked)
         button_icon = QIcon('imagens/cachorro.png')
-        invisible_button1.setIcon(button_icon)
-        invisible_button1.setIconSize(invisible_button1.size())  # ajustar o tamanho do ícone
+        caninos_button.setIcon(button_icon)
+        caninos_button.setIconSize(caninos_button.size())  # ajustar o tamanho do ícone
 
-        invisible_button2 = QPushButton(self)
-        invisible_button2.setStyleSheet("background-color: transparent")
-        invisible_button2.setGeometry(269, 245, 700, 210)
-        invisible_button2.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        invisible_button2.setAutoFillBackground(True)   # luz botão
-        invisible_button2.clicked.connect(self.buttonClicked)
+        felinos_button = QPushButton(self)
+        felinos_button.setStyleSheet("background-color: transparent")
+        felinos_button.setGeometry(269, 245, 700, 210)
+        felinos_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
+        felinos_button.setAutoFillBackground(True)   # luz botão
+        felinos_button.clicked.connect(self.buttonClicked)
         button_icon2 = QIcon('imagens/Gatos.png')
-        invisible_button2.setIcon(button_icon2)
-        invisible_button2.setIconSize(invisible_button2.size())  # ajustar o tamanho do ícone
+        felinos_button.setIcon(button_icon2)
+        felinos_button.setIconSize(felinos_button.size())  # ajustar o tamanho do ícone
 
-        invisible_button3 = QPushButton(self)
-        invisible_button3.setStyleSheet("background-color: transparent")
-        invisible_button3.setGeometry(269, 455, 700, 210)
-        invisible_button3.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        invisible_button3.setAutoFillBackground(True)  # luz botão
-        invisible_button3.clicked.connect(self.buttonClicked)
+        outros_button = QPushButton(self)
+        outros_button.setStyleSheet("background-color: transparent")
+        outros_button.setGeometry(269, 455, 700, 210)
+        outros_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
+        outros_button.setAutoFillBackground(True)  # luz botão
+        outros_button.clicked.connect(self.buttonClicked)
         button_icon3 = QIcon('imagens/Outros.png')
-        invisible_button3.setIcon(button_icon3)
-        invisible_button3.setIconSize(invisible_button3.size())  # ajustar o tamanho do ícone3
+        outros_button.setIcon(button_icon3)
+        outros_button.setIconSize(outros_button.size())  # ajustar o tamanho do ícone3
 
-        invisible_button4 = QPushButton(self)
-        invisible_button4.setStyleSheet("background-color: transparent")
-        invisible_button4.setGeometry(5, 670, 964, 130)
-        invisible_button4.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
-        invisible_button4.setAutoFillBackground(True)  # luz botão
-        invisible_button4.clicked.connect(self.buttonClicked)
+        univassouras_button = QPushButton(self)
+        univassouras_button.setStyleSheet("background-color: transparent")
+        univassouras_button.setGeometry(5, 670, 964, 130)
+        univassouras_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
+        univassouras_button.setAutoFillBackground(True)  # luz botão
+        univassouras_button.clicked.connect(self.buttonClicked)
         button_icon4 = QIcon('imagens/univassouras.png')
-        invisible_button4.setIcon(button_icon4)
-        invisible_button4.setIconSize(invisible_button4.size())  # ajustar o tamanho do ícone3
+        univassouras_button.setIcon(button_icon4)
+        univassouras_button.setIconSize(univassouras_button.size())  # ajustar o tamanho do ícone3
 
         self.show()
 
