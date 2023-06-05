@@ -13,14 +13,11 @@ class App(QMainWindow):
         self.setMinimumSize(969, 800)
         self.setMaximumSize(969, 800)
 
-        # Define a cor vinho
-        fundo_vinho = QColor(80, 0, 0)
-
-        # Aplica a cor vinho como fundo usando CSS
-        self.setStyleSheet(f"background-color: {fundo_vinho.name()};")
-
         icone = QIcon('imagens/icone.png')
         self.setWindowIcon(icone)
+
+        fundo_vinho = QColor(80, 0, 0)
+        self.setStyleSheet(f"background-color: {fundo_vinho.name()};")
 
         self.menu()
 
@@ -32,7 +29,6 @@ class App(QMainWindow):
         button_icon = QIcon('imagens/Cadastrar um novo pet.png')
         cadastro_button.setIcon(button_icon)
         cadastro_button.setIconSize(cadastro_button.size())  # ajustar o tamanho do ícone
-
 
         caninos_button = QPushButton(self)
         caninos_button.setStyleSheet("background-color: transparent; border: 1px solid #000000")

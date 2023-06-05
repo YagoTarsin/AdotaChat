@@ -18,9 +18,5 @@ class TelaCadastro(QMainWindow):
         pixmap = QPixmap('imagens/fundo_cadastro.png')
         self.background_label.setPixmap(pixmap)
         self.background_label.setScaledContents(True)
-
-        # Ajusta o tamanho da janela para o tamanho da imagem
         self.resize(pixmap.width(), pixmap.height())
-
-        # Configura a folha de estilo para posicionar a imagem corretamente
         self.setStyleSheet("QMainWindow {background: transparent;}")
