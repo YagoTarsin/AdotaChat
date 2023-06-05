@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QAction, QLabel
 from PyQt5.QtGui import QIcon, QColor
 from PyQt5.QtCore import Qt
+import FuncoesButtons
 
 
 class App(QMainWindow):
@@ -68,7 +69,7 @@ class App(QMainWindow):
         univassouras_button.setGeometry(30, 680, 900, 100)
         univassouras_button.setCursor(Qt.PointingHandCursor)  # cursor vira mãozinha
         univassouras_button.setAutoFillBackground(True)  # luz botão
-        univassouras_button.clicked.connect(self.buttonClicked)
+        univassouras_button.clicked.connect(self.ButtonVassouras)
         button_icon4 = QIcon('imagens/univassouras.png')
         univassouras_button.setIcon(button_icon4)
         univassouras_button.setIconSize(univassouras_button.size())  # ajustar o tamanho do ícone3
@@ -113,6 +114,9 @@ class App(QMainWindow):
 
     def buttonClicked(self):
         print("Botao clicado")
+
+    def ButtonVassouras(self):
+        FuncoesButtons.AbrirSiteUnivassouras()
 
 
 if __name__ == "__main__":
