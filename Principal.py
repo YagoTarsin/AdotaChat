@@ -50,17 +50,39 @@ class App(QMainWindow):
                                  "color: white;"
                                  "font-size: 20px")
 
-        menu_arquivo = barra_menu.addMenu('⚙')
+        menu_configuracoes = barra_menu.addMenu('⚙ Configurações')
 
-        Gera_Exce = QAction('Remover um pet', self)
-        Gera_Exce.triggered.connect(self.teste)
-        menu_arquivo.addAction(Gera_Exce)
+        Perfil = QAction('👥 Perfil', self)
+        Perfil.triggered.connect(self.teste)
+        menu_configuracoes.addAction(Perfil)
+
+        Discord = QAction('🤖 Discord', self)
+        Discord.triggered.connect(self.teste)
+        menu_configuracoes.addAction(Discord)
+
+        Arquivo  = barra_menu.addMenu('📁 Arquivo')
+
+        meus_pets = QAction('❤ Meus pets', self)
+        Perfil.triggered.connect(self.teste)
+        Arquivo.addAction(meus_pets)
+
+        Pets = barra_menu.addMenu('🐾 Pets')
+
+        cachorro = QAction('🐕 Sobre os cães', self)
+        Perfil.triggered.connect(self.teste)
+        Pets.addAction(cachorro)
+
+        gatos = QAction('🐈 Sobre os gatos', self)
+        Perfil.triggered.connect(self.teste)
+        Pets.addAction(gatos)
+
 
     def teste(self):
         pass
 
     def buttonClicked(self):
-        print("Botão invisível clicado!")
+        print("Botao clicado")
+
 
 if __name__ == "__main__":
     app = QApplication([])
