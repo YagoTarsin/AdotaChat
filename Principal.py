@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QAction, QLabel
-from PyQt5.QtGui import QIcon, QPixmap
+from PyQt5.QtGui import QIcon, QColor
 from PyQt5.QtCore import Qt
 
 
@@ -11,14 +11,14 @@ class App(QMainWindow):
         self.setMinimumSize(969, 800)
         self.setMaximumSize(969, 800)
 
+        # Define a cor vinho
+        fundo_vinho = QColor(80, 0, 0)
+
+        # Aplica a cor vinho como fundo usando CSS
+        self.setStyleSheet(f"background-color: {fundo_vinho.name()};")
+
         icone = QIcon('imagens/icone.png')
         self.setWindowIcon(icone)
-
-        #self.background_label = QLabel(self)
-        #self.background_label.setGeometry(0, 0, 1000, 800)
-        #pixmap = QPixmap('imagens/fundo.png')
-        #self.background_label.setPixmap(pixmap)
-        #self.background_label.setScaledContents(True)
 
         self.menu()
 
