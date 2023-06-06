@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit
 from PyQt5.QtGui import QPixmap, QIcon
 
 
@@ -20,3 +20,17 @@ class TelaCadastro(QMainWindow):
         self.background_label.setScaledContents(True)
         self.resize(pixmap.width(), pixmap.height())
         self.setStyleSheet("QMainWindow {background: transparent;}")
+
+        self.Dados_Pessoais = QLabel('Dados Pessoais', self)
+        self.Dados_Pessoais.move(175, 10)
+        self.Dados_Pessoais.setFixedSize(300, 50)
+        self.Dados_Pessoais.setStyleSheet('font-size: 40px')
+
+        self.nome_label = QLabel('Nome:', self)
+        self.nome_label.move(30, 80)
+        self.nome_label.setStyleSheet('font-size: 20px')
+
+        self.nome_edit = QLineEdit(self)
+        self.nome_edit.move(100, 80)
+        self.nome_edit.setFixedSize(230, 30)
+        self.nome_edit.setFixedWidth(280)
