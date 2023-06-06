@@ -68,7 +68,7 @@ class TelaCadastro(QMainWindow):
 
         self.email_label = QLabel('Endereço:', self)
         self.email_label.move(15, 200)
-        self.email_label.setStyleSheet('font-size: 15px')
+        self.email_label.setStyleSheet('font-size: 20px')
 
         self.email_edit = QLineEdit(self)
         self.email_edit.move(120, 200)
