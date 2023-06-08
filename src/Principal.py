@@ -4,7 +4,6 @@ from PyQt5.QtCore import Qt
 import FuncoesButtons
 import CadastroDePets
 
-# 750
 
 class App(QMainWindow):
     def __init__(self):

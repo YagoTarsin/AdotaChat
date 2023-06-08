@@ -127,17 +127,14 @@ class TelaCadastro(QMainWindow):
             self.combobox_tipo.addItem(tipos[tipo])
 
     def carregar_idade(self):
-        tipos = []
-        for c in range(1, 21):
+        tipos = ['Não informado']
+        for c in range(0, 21):
             tipos.append(str(c))
         for tipo in range(len(tipos)):
             self.combobox_idade.addItem(tipos[tipo])
 
     def carregar_vacina(self):
-        tipos = ['Em dia', 'Ausente']
+        tipos = ['Não informado', 'Em dia', 'Ausente']
         for tipo in range(len(tipos)):
             self.combobox_vacina.addItem(tipos[tipo])
-
-
-
 

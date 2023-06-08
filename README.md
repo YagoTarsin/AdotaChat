@@ -1,3 +1,2 @@
-# AdotaChat
+![](src/imagens/univassouras.png)
 
-Use no terminal: pip install PyQt5
