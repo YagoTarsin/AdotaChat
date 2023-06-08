@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QComboBox
+from PyQt5.QtWidgets import QPushButton, QMainWindow, QLabel, QLineEdit, QComboBox
 from PyQt5.QtGui import QPixmap, QIcon
 
 
@@ -76,10 +76,10 @@ class TelaCadastro(QMainWindow):
         self.endereco_edit.setFixedWidth(445)
         self.endereco_edit.setStyleSheet('font-size: 15px')
 # ----------------------------------------------------------------------------------------------------------------------
-        self.Dados_Pessoais = QLabel('Dados do Pet', self)
-        self.Dados_Pessoais.move(175, 260)
-        self.Dados_Pessoais.setFixedSize(300, 50)
-        self.Dados_Pessoais.setStyleSheet('font-size: 40px')
+        self.Dados_pets = QLabel('Dados do Pet', self)
+        self.Dados_pets.move(175, 260)
+        self.Dados_pets.setFixedSize(300, 50)
+        self.Dados_pets.setStyleSheet('font-size: 40px')
 
         self.tipo_label = QLabel('Tipo:', self)
         self.tipo_label.move(35, 330)
@@ -112,29 +112,70 @@ class TelaCadastro(QMainWindow):
         self.carregar_idade()
 
         self.vacina_label = QLabel('Vacina:', self)
-        self.vacina_label.move(300, 400)
+        self.vacina_label.move(290, 400)
         self.vacina_label.setStyleSheet('font-size: 20px')
 
         self.combobox_vacina = QComboBox(self)
-        self.combobox_vacina.move(375, 400)
-        self.combobox_vacina.setFixedWidth(190)
+        self.combobox_vacina.move(365, 400)
+        self.combobox_vacina.setFixedWidth(200)
         self.combobox_vacina.setStyleSheet('font-size: 15px')
         self.carregar_vacina()
 
+        self.situacao_label = QLabel('Situação:', self)
+        self.situacao_label.move(7, 470)
+        self.situacao_label.setStyleSheet('font-size: 20px')
+
+        self.combobox_situacao = QComboBox(self)
+        self.combobox_situacao.move(100, 470)
+        self.combobox_situacao.setFixedWidth(175)
+        self.combobox_situacao.setStyleSheet('font-size: 15px')
+        self.carregar_situacao()
+
+        self.porte_label = QLabel('Porte:', self)
+        self.porte_label.move(300, 470)
+        self.porte_label.setStyleSheet('font-size: 20px')
+
+        self.combobox_porte = QComboBox(self)
+        self.combobox_porte.move(365, 470)
+        self.combobox_porte.setFixedWidth(200)
+        self.combobox_porte.setStyleSheet('font-size: 15px')
+        self.carregar_porte()
+
+        self.salvar_button = QPushButton('Salvar', self)
+        self.salvar_button.setGeometry(200, 550, 200, 50)
+        self.salvar_button.setStyleSheet('font-size: 15px')
+        self.salvar_button.clicked.connect(self.salvar)
+
+    def salvar(self):
+        pass
+
     def carregar_tipo(self):
-        tipos = ['Caninos', 'Felinos', 'Outros']
+        tipos = ['', 'Caninos', 'Felinos', 'Outros']
         for tipo in range(len(tipos)):
             self.combobox_tipo.addItem(tipos[tipo])
 
+
     def carregar_idade(self):
-        tipos = ['Não informado']
+        tipos = ['', 'Não informado']
         for c in range(0, 21):
             tipos.append(str(c))
         for tipo in range(len(tipos)):
             self.combobox_idade.addItem(tipos[tipo])
 
+
     def carregar_vacina(self):
-        tipos = ['Não informado', 'Em dia', 'Ausente']
+        tipos = ['', 'Não informado', 'Em dia', 'Ausente']
         for tipo in range(len(tipos)):
             self.combobox_vacina.addItem(tipos[tipo])
 
+
+    def carregar_situacao(self):
+        tipos = ['', 'Adoção', 'Doação']
+        for tipo in range(len(tipos)):
+            self.combobox_situacao.addItem(tipos[tipo])
+
+
+    def carregar_porte(self):
+        tipos = ['', 'Pequeno', 'Médio', 'Grande']
+        for tipo in range(len(tipos)):
+            self.combobox_porte.addItem(tipos[tipo])
