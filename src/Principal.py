@@ -27,7 +27,7 @@ class App(QMainWindow):
         cadastro_button.clicked.connect(self.ButtonCadastro)
         button_icon = QIcon('imagens/Cadastrar um novo pet.png')
         cadastro_button.setIcon(button_icon)
-        cadastro_button.setIconSize(cadastro_button.size())  # ajustar o tamanho do ícone
+        cadastro_button.setIconSize(cadastro_button.size())
 
         caninos_button = QPushButton(self)
         caninos_button.setStyleSheet("background-color: transparent")
@@ -35,7 +35,7 @@ class App(QMainWindow):
         caninos_button.clicked.connect(self.buttonClicked)
         button_icon = QIcon('imagens/cachorros.png')
         caninos_button.setIcon(button_icon)
-        caninos_button.setIconSize(caninos_button.size())  # ajustar o tamanho do ícone
+        caninos_button.setIconSize(caninos_button.size())
 
         felinos_button = QPushButton(self)
         felinos_button.setStyleSheet("background-color: transparent")
@@ -43,7 +43,7 @@ class App(QMainWindow):
         felinos_button.clicked.connect(self.buttonClicked)
         button_icon2 = QIcon('imagens/Gatos.png')
         felinos_button.setIcon(button_icon2)
-        felinos_button.setIconSize(felinos_button.size())  # ajustar o tamanho do ícone
+        felinos_button.setIconSize(felinos_button.size())
 
         outros_button = QPushButton(self)
         outros_button.setStyleSheet("background-color: transparent")
@@ -51,7 +51,7 @@ class App(QMainWindow):
         outros_button.clicked.connect(self.buttonClicked)
         button_icon3 = QIcon('imagens/Outros.png')
         outros_button.setIcon(button_icon3)
-        outros_button.setIconSize(outros_button.size())  # ajustar o tamanho do ícone3
+        outros_button.setIconSize(outros_button.size())
 
         univassouras_button = QPushButton(self)
         univassouras_button.setStyleSheet("background-color: transparent")
