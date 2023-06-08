@@ -147,7 +147,7 @@ class TelaCadastro(QMainWindow):
         self.salvar_button.clicked.connect(self.salvar)
 
     def salvar(self):
-        pass
+        print('botão clicado')
 
     def carregar_tipo(self):
         tipos = ['', 'Caninos', 'Felinos', 'Outros']
