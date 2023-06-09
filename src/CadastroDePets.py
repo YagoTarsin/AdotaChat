@@ -1,10 +1,12 @@
 from PyQt5.QtWidgets import QPushButton, QMainWindow, QLabel, QLineEdit, QComboBox
 from PyQt5.QtGui import QPixmap, QIcon
+import time
 
 
 class TelaCadastro(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.erro = None
         self.setWindowTitle('Cadastro 📋')
         self.setGeometry(1100, 100, 600, 800)
         self.setMinimumSize(600, 800)
@@ -75,7 +77,7 @@ class TelaCadastro(QMainWindow):
         self.endereco_edit.setFixedSize(230, 30)
         self.endereco_edit.setFixedWidth(445)
         self.endereco_edit.setStyleSheet('font-size: 15px')
-# ----------------------------------------------------------------------------------------------------------------------
+        # ----------------------------------------------------------------------------------------------------------------------
         self.Dados_pets = QLabel('Dados do Pet', self)
         self.Dados_pets.move(175, 260)
         self.Dados_pets.setFixedSize(300, 50)
@@ -147,7 +149,43 @@ class TelaCadastro(QMainWindow):
         self.salvar_button.clicked.connect(self.salvar)
 
     def salvar(self):
-        print('botão clicado')
+        nome = self.nome_edit.text()
+        cpf = self.cpf_edit.text()
+        tel = self.tel_edit.text()
+        email = self.email_edit.text()
+        endereco = self.endereco_edit.text()
+        Tipo = self.combobox_tipo.currentText()
+        raca = self.raca_edit.text()
+        idade = self.combobox_idade.currentText()
+        vacina = self.combobox_vacina.currentText()
+        situacao = self.combobox_situacao.currentText()
+        porte = self.combobox_porte.currentText()
+        if nome == '' \
+                or cpf == '' \
+                or tel == '' \
+                or email == '' \
+                or endereco == '' \
+                or Tipo == '' \
+                or raca == '' \
+                or idade == '' \
+                or vacina == '' \
+                or situacao == '' \
+                or porte == '':
+            self.erro = QLabel('Preencha todos os campos', self)
+            self.erro.move(185, 625)
+            self.erro.setStyleSheet('font-size: 20px; color: red')
+            self.erro.setFixedWidth(400)
+            self.erro.show()
+        else:
+            try:
+                self.erro.deleteLater()
+            except:
+                pass
+
+            self.nome_edit.clear(), self.cpf_edit.clear(), self.tel_edit.clear(), self.email_edit.clear()
+            self.endereco_edit.clear(), self.raca_edit.clear(), self.combobox_tipo.setCurrentIndex(0)
+            self.combobox_idade.setCurrentIndex(0), self.combobox_vacina.setCurrentIndex(0)
+            self.combobox_situacao.setCurrentIndex(0), self.combobox_porte.setCurrentIndex(0)
 
     def carregar_tipo(self):
         tipos = ['', 'Caninos', 'Felinos', 'Outros']
