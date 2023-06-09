@@ -159,11 +159,11 @@ class TelaCadastro(QMainWindow):
         Tipo = self.combobox_tipo.currentText()
         idade = self.combobox_idade.currentText()
         vacina = self.combobox_vacina.currentText()
-        situacao = self.combobox_situacao.currentText()
+        cor = self.combobox_cor.currentText()
         porte = self.combobox_porte.currentText()
 
         if nome == '' or cpf == '' or tel == '' or email == '' or endereco == '' or Tipo == '' \
-                or raca == '' or idade == '' or vacina == '' or situacao == '' or porte == '':
+                or raca == '' or idade == '' or vacina == '' or cor == '' or porte == '':
             self.erro = QLabel('Preencha todos os campos', self)
             self.erro.move(185, 625)
             self.erro.setStyleSheet('font-size: 20px; color: red')
@@ -178,12 +178,12 @@ class TelaCadastro(QMainWindow):
             self.nome_edit.clear(), self.cpf_edit.clear(), self.tel_edit.clear(), self.email_edit.clear()
             self.endereco_edit.clear(), self.raca_edit.clear(), self.combobox_tipo.setCurrentIndex(0)
             self.combobox_idade.setCurrentIndex(0), self.combobox_vacina.setCurrentIndex(0)
-            self.combobox_situacao.setCurrentIndex(0), self.combobox_porte.setCurrentIndex(0)
+            self.combobox_cor.setCurrentIndex(0), self.combobox_porte.setCurrentIndex(0)
 
-            caminho_arquivo = f'Banco/{email}.csv'
+            caminho_arquivo = f'Banco/{Tipo}/{email}.csv'
             dados = {
                 'Nome': nome, 'CPF': cpf, 'Telefone': tel, 'Email': email, 'Endereço': endereco,
-                'Raça': raca, 'Tipo': Tipo, 'Idade': idade, 'Vacina': vacina, 'Situação': situacao, 'Porte': porte
+                'Raça': raca, 'Tipo': Tipo, 'Idade': idade, 'Vacina': vacina, 'Situação': cor, 'Porte': porte
             }
             with open(f'{caminho_arquivo}', 'a', newline='',  encoding='utf-8') as arquivo_csv:
                 writer = csv.DictWriter(arquivo_csv, fieldnames=dados.keys())
