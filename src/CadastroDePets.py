@@ -1,6 +1,8 @@
+import os
+
 from PyQt5.QtWidgets import QPushButton, QMainWindow, QLabel, QLineEdit, QComboBox
 from PyQt5.QtGui import QPixmap, QIcon
-import time
+import csv
 
 
 class TelaCadastro(QMainWindow):
@@ -186,6 +188,26 @@ class TelaCadastro(QMainWindow):
             self.endereco_edit.clear(), self.raca_edit.clear(), self.combobox_tipo.setCurrentIndex(0)
             self.combobox_idade.setCurrentIndex(0), self.combobox_vacina.setCurrentIndex(0)
             self.combobox_situacao.setCurrentIndex(0), self.combobox_porte.setCurrentIndex(0)
+
+            caminho_arquivo = f'Banco/{email}.csv'
+            dados = {
+                'Nome': nome,
+                'CPF': cpf,
+                'Telefone': tel,
+                'Email': email,
+                'Endereço': endereco,
+                'Raça': raca,
+                'Tipo': Tipo,
+                'Idade': idade,
+                'Vacina': vacina,
+                'Situação': situacao,
+                'Porte': porte
+            }
+            with open(f'{caminho_arquivo}', 'a', newline='',  encoding='utf-8') as arquivo_csv:
+                writer = csv.DictWriter(arquivo_csv, fieldnames=dados.keys())
+                if arquivo_csv.tell() == 0:
+                    writer.writeheader()
+                writer.writerow(dados)
 
     def carregar_tipo(self):
         tipos = ['', 'Caninos', 'Felinos', 'Outros']
