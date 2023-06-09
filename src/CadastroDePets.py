@@ -1,5 +1,3 @@
-import os
-
 from PyQt5.QtWidgets import QPushButton, QMainWindow, QLabel, QLineEdit, QComboBox
 from PyQt5.QtGui import QPixmap, QIcon
 import csv
@@ -79,7 +77,7 @@ class TelaCadastro(QMainWindow):
         self.endereco_edit.setFixedSize(230, 30)
         self.endereco_edit.setFixedWidth(445)
         self.endereco_edit.setStyleSheet('font-size: 15px')
-        # ----------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------------------
         self.Dados_pets = QLabel('Dados do Pet', self)
         self.Dados_pets.move(175, 260)
         self.Dados_pets.setFixedSize(300, 50)
@@ -151,13 +149,14 @@ class TelaCadastro(QMainWindow):
         self.salvar_button.clicked.connect(self.salvar)
 
     def salvar(self):
-        nome = self.nome_edit.text()
-        cpf = self.cpf_edit.text()
+        nome = self.nome_edit.text().title()
+        cpf = self.cpf_edit.text().replace('.', '',).replace('-', '')
+        cpf = f'{cpf[:3]}.{cpf[3:6]}.{cpf[6:9]}-{cpf[9:]}'
         tel = self.tel_edit.text()
-        email = self.email_edit.text()
+        email = self.email_edit.text().lower()
         endereco = self.endereco_edit.text()
-        Tipo = self.combobox_tipo.currentText()
         raca = self.raca_edit.text()
+        Tipo = self.combobox_tipo.currentText()
         idade = self.combobox_idade.currentText()
         vacina = self.combobox_vacina.currentText()
         situacao = self.combobox_situacao.currentText()
@@ -180,7 +179,7 @@ class TelaCadastro(QMainWindow):
             self.erro.show()
         else:
             try:
-                self.erro.deleteLater()
+                self.erro.deleteLater()  # Tratamento
             except:
                 pass
 
