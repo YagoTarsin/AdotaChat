@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QDialog, QLabel, QComboBox
 from PyQt5.QtGui import QIcon, QColor
 from PyQt5.QtCore import Qt
 import FuncoesButtons
@@ -71,7 +71,30 @@ class App(QMainWindow):
         print('Click')
 
     def buttonClicked(self):
-        print("Botao clicado")
+        self.escolha = QDialog()
+        self.escolha.setWindowTitle('Abrir banco')
+        self.escolha.setFixedSize(320, 200)
+
+        self.Usuario = QLabel('Escolha o usuario', self.escolha)
+        self.Usuario.move(80, 5)
+        self.Usuario.setFixedSize(300, 50)
+        self.Usuario.setStyleSheet('font-size: 20px')
+
+        self.combobox_usuarios = QComboBox(self.escolha)
+        self.combobox_usuarios.move(70, 60)
+        self.combobox_usuarios.setFixedWidth(175)
+        self.combobox_usuarios.setStyleSheet('font-size: 15px')
+
+        def salvar():
+            pass
+
+        self.salvar_button = QPushButton('Salvar', self.escolha)
+        self.salvar_button.setGeometry(60, 130, 200, 40)
+        self.salvar_button.setStyleSheet('font-size: 15px')
+        self.salvar_button.clicked.connect(salvar)
+
+
+        self.escolha.show()
 
     def ButtonCadastro(self):
         self.Cadastro = CadastroDePets.TelaCadastro()

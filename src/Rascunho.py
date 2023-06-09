@@ -1,33 +1,49 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
-from PyQt5.QtGui import QPixmap, QIcon
+import csv
+from PyQt5.QtWidgets import QMainWindow, QTableWidget, QTableWidgetItem, QAbstractItemView
+from PyQt5.QtGui import QIcon
 
 
-class MainWindow(QMainWindow):
+# ----------------------------------------------------------------------------------------------------------------------
+
+
+class MostrarCaninos(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('Cadastro 📋')
-        self.setGeometry(100, 100, 600, 800)
-        self.setMinimumSize(600, 800)
-        self.setMaximumSize(600, 800)
+        self.setWindowTitle('Estoque')
+        self.setGeometry(1200, 100, 500, 750)
+        self.setMinimumSize(440, 750)
 
-        icone = QIcon('imagens/icone.png')
+        icone = QIcon('Imagens/icone.png')
         self.setWindowIcon(icone)
 
-        self.background_label = QLabel(self)
-        self.background_label.setGeometry(0, 0, 600, 800)
-        pixmap = QPixmap('imagens/fundo_cadastro.png')
-        self.background_label.setPixmap(pixmap)
-        self.background_label.setScaledContents(True)
+        self.table = QTableWidget()  # cria tabela
+        self.table.setColumnCount(11)  # tabela com 3 colunas
 
-        # Ajusta o tamanho da janela para o tamanho da imagem
-        self.resize(pixmap.width(), pixmap.height())
+        Conteudo = [
+                'Nome',
+                'CPF',
+                'Telefone',
+                'Email',
+                'Endereço',
+                'Raça',
+                'Tipo',
+                'Idade',
+                'Vacina',
+                'Situação',
+                'Porte'
+            ]
 
-        # Configura a folha de estilo para posicionar a imagem corretamente
-        self.setStyleSheet("QMainWindow {background: transparent;}")
+        self.table.setHorizontalHeaderLabels(Conteudo)
 
-
-if __name__ == '__main__':
-    app = QApplication([])
-    window = MainWindow()
-    window.show()
-    app.exec_()
+        with open('Banco/Caninos/', newline='', encoding='UTF-8') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+            for linha in reader:
+                self.table.insertRow(self.table.rowCount())
+                for i, field in enumerate(linha):
+                    if linha == [Conteudo]:
+                        pass
+                    else:
+                        item = QTableWidgetItem(field)
+                        self.table.setItem(self.table.rowCount() - 1, i, item)
+        self.setCentralWidget(self.table)
+        self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
