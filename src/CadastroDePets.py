@@ -123,15 +123,15 @@ class TelaCadastro(QMainWindow):
         self.combobox_vacina.setStyleSheet('font-size: 15px')
         self.carregar_vacina()
 
-        self.situacao_label = QLabel('Situação:', self)
-        self.situacao_label.move(7, 470)
+        self.situacao_label = QLabel('Coloração:', self)
+        self.situacao_label.move(2, 470)
         self.situacao_label.setStyleSheet('font-size: 20px')
 
-        self.combobox_situacao = QComboBox(self)
-        self.combobox_situacao.move(100, 470)
-        self.combobox_situacao.setFixedWidth(175)
-        self.combobox_situacao.setStyleSheet('font-size: 15px')
-        self.carregar_situacao()
+        self.combobox_cor = QComboBox(self)
+        self.combobox_cor.move(100, 470)
+        self.combobox_cor.setFixedWidth(175)
+        self.combobox_cor.setStyleSheet('font-size: 15px')
+        self.carregar_cor()
 
         self.porte_label = QLabel('Porte:', self)
         self.porte_label.move(300, 470)
@@ -161,17 +161,9 @@ class TelaCadastro(QMainWindow):
         vacina = self.combobox_vacina.currentText()
         situacao = self.combobox_situacao.currentText()
         porte = self.combobox_porte.currentText()
-        if nome == '' \
-                or cpf == '' \
-                or tel == '' \
-                or email == '' \
-                or endereco == '' \
-                or Tipo == '' \
-                or raca == '' \
-                or idade == '' \
-                or vacina == '' \
-                or situacao == '' \
-                or porte == '':
+
+        if nome == '' or cpf == '' or tel == '' or email == '' or endereco == '' or Tipo == '' \
+                or raca == '' or idade == '' or vacina == '' or situacao == '' or porte == '':
             self.erro = QLabel('Preencha todos os campos', self)
             self.erro.move(185, 625)
             self.erro.setStyleSheet('font-size: 20px; color: red')
@@ -190,17 +182,8 @@ class TelaCadastro(QMainWindow):
 
             caminho_arquivo = f'Banco/{email}.csv'
             dados = {
-                'Nome': nome,
-                'CPF': cpf,
-                'Telefone': tel,
-                'Email': email,
-                'Endereço': endereco,
-                'Raça': raca,
-                'Tipo': Tipo,
-                'Idade': idade,
-                'Vacina': vacina,
-                'Situação': situacao,
-                'Porte': porte
+                'Nome': nome, 'CPF': cpf, 'Telefone': tel, 'Email': email, 'Endereço': endereco,
+                'Raça': raca, 'Tipo': Tipo, 'Idade': idade, 'Vacina': vacina, 'Situação': situacao, 'Porte': porte
             }
             with open(f'{caminho_arquivo}', 'a', newline='',  encoding='utf-8') as arquivo_csv:
                 writer = csv.DictWriter(arquivo_csv, fieldnames=dados.keys())
@@ -225,10 +208,10 @@ class TelaCadastro(QMainWindow):
         for tipo in range(len(tipos)):
             self.combobox_vacina.addItem(tipos[tipo])
 
-    def carregar_situacao(self):
-        tipos = ['', 'Adoção', 'Doação']
+    def carregar_cor(self):
+        tipos = ['', 'Preto', 'Marrom', 'Branco', 'Cinza', 'Mesclado']
         for tipo in range(len(tipos)):
-            self.combobox_situacao.addItem(tipos[tipo])
+            self.combobox_cor.addItem(tipos[tipo])
 
     def carregar_porte(self):
         tipos = ['', 'Pequeno', 'Médio', 'Grande']
