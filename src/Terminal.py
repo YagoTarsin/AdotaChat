@@ -1,6 +1,5 @@
-from PyQt5.QtWidgets import QApplication, QDialog, QTextEdit, QVBoxLayout
-from PyQt5.QtGui import QFont, QColor, QPalette
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QDialog, QTextEdit, QVBoxLayout
+from PyQt5.QtGui import QFont
 
 
 class TerminalDialog(QDialog):
