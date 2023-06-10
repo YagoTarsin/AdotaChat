@@ -32,7 +32,7 @@ Os alunos anotaram atentamente a todas as observações, criaram o fluxograma do
 
  
 
-Um fluxograma foi criado para exemplificar a forma de funcionamento do sistema desde o cadastro até o seu momento final que se dá por meio da adoção. Veja na abaixo: 
+Um fluxograma foi criado para exemplificar a forma de funcionamento do sistema desde o cadastro até o seu momento final que se dá por meio da adoção. Veja abaixo: 
 
  
 ![Cadastro e adoção de animais](https://github.com/YagoTarsin/PetMatch/assets/125316134/0b6cc626-1825-46df-9bf3-539ff42729fe)
