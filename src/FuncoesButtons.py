@@ -1,4 +1,6 @@
 import webbrowser
+import os
+import csv
 from PyQt5.QtWidgets import QAction
 
 
@@ -37,3 +39,28 @@ def menu(self):
     gatos = QAction('🐈 Sobre os gatos', self)
     gatos.triggered.connect(self.teste)
     Pets.addAction(gatos)
+
+
+def LerBanco(tipo):
+    pasta = f"Banco/{tipo}"
+    coluna_alvo = "Nome"
+    arquivos = os.listdir(pasta)
+    pilha_valores = []
+
+    for arquivo in arquivos:
+        if arquivo.endswith(".csv"):
+            with open(os.path.join(pasta, arquivo), 'r') as f:
+                reader = csv.DictReader(f)
+
+                # Obtém os valores da coluna alvo e adiciona à pilha
+                for row in reader:
+                    valor = row[coluna_alvo]
+                    pilha_valores.append(valor)
+
+    # Imprime os valores da coluna alvo (desempilhando)
+    tipos = ['']
+    while not len(pilha_valores) == 0:
+        valor = pilha_valores.pop()
+        for c in range(0, 21):
+            tipos.append(str(valor))
+

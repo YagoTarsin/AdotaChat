@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QDialog, QLabel, QComboBox
 from PyQt5.QtGui import QIcon, QColor
 from PyQt5.QtCore import Qt
+import os
+import csv
 import FuncoesButtons
 import CadastroDePets
 
@@ -32,7 +34,7 @@ class App(QMainWindow):
         caninos_button = QPushButton(self)
         caninos_button.setStyleSheet("background-color: transparent")
         caninos_button.setGeometry(269, 35, 700, 210)
-        caninos_button.clicked.connect(self.buttonClicked)
+        caninos_button.clicked.connect(self.AbrirCaninos)
         button_icon = QIcon('imagens/cachorros.png')
         caninos_button.setIcon(button_icon)
         caninos_button.setIconSize(caninos_button.size())
@@ -40,7 +42,7 @@ class App(QMainWindow):
         felinos_button = QPushButton(self)
         felinos_button.setStyleSheet("background-color: transparent")
         felinos_button.setGeometry(269, 245, 700, 210)
-        felinos_button.clicked.connect(self.buttonClicked)
+        felinos_button.clicked.connect(self.AbrirFelinos)
         button_icon2 = QIcon('imagens/Gatos.png')
         felinos_button.setIcon(button_icon2)
         felinos_button.setIconSize(felinos_button.size())
@@ -48,7 +50,7 @@ class App(QMainWindow):
         outros_button = QPushButton(self)
         outros_button.setStyleSheet("background-color: transparent")
         outros_button.setGeometry(269, 455, 700, 210)
-        outros_button.clicked.connect(self.buttonClicked)
+        outros_button.clicked.connect(self.AbrirOutros)
         button_icon3 = QIcon('imagens/Outros.png')
         outros_button.setIcon(button_icon3)
         outros_button.setIconSize(outros_button.size())
@@ -70,7 +72,7 @@ class App(QMainWindow):
     def teste(self):
         print('Click')
 
-    def buttonClicked(self):
+    def buttonClicked(self, tipo):
         self.escolha = QDialog()
         self.escolha.setWindowTitle('Abrir banco')
         self.escolha.setFixedSize(320, 200)
@@ -84,6 +86,30 @@ class App(QMainWindow):
         self.combobox_usuarios.move(70, 60)
         self.combobox_usuarios.setFixedWidth(175)
         self.combobox_usuarios.setStyleSheet('font-size: 15px')
+        self.carrega(tipo)
+
+    def carrega(self, tipo):
+        pasta = f"Banco/{tipo}"
+        coluna_alvo = "Nome"
+        arquivos = os.listdir(pasta)
+        pilha_valores = []
+
+        for arquivo in arquivos:
+            if arquivo.endswith(".csv"):
+                with open(os.path.join(pasta, arquivo), 'r') as f:
+                    reader = csv.DictReader(f)
+
+                    # Obtém os valores da coluna alvo e adiciona à pilha
+                    for row in reader:
+                        valor = row[coluna_alvo]
+                        pilha_valores.append(valor)
+        tipos = set()  # Utilize um conjunto para armazenar os valores únicos
+        while not len(pilha_valores) == 0:
+            valor = pilha_valores.pop()
+            tipos.add(valor)  # Adicione o valor ao conjunto
+
+        for valor in tipos:
+            self.combobox_usuarios.addItem(valor)
 
         def salvar():
             pass
@@ -93,8 +119,16 @@ class App(QMainWindow):
         self.salvar_button.setStyleSheet('font-size: 15px')
         self.salvar_button.clicked.connect(salvar)
 
-
         self.escolha.show()
+
+    def AbrirCaninos(self):
+        self.buttonClicked('Caninos')
+
+    def AbrirFelinos(self):
+        self.buttonClicked('Felinos')
+
+    def AbrirOutros(self):
+        self.buttonClicked('Outros')
 
     def ButtonCadastro(self):
         self.Cadastro = CadastroDePets.TelaCadastro()
