@@ -77,8 +77,8 @@ class App(QMainWindow):
         self.escolha.setWindowTitle('Abrir banco')
         self.escolha.setFixedSize(320, 200)
 
-        self.Usuario = QLabel('Escolha o usuario', self.escolha)
-        self.Usuario.move(80, 5)
+        self.Usuario = QLabel('Escolha a raça', self.escolha)
+        self.Usuario.move(95, 5)
         self.Usuario.setFixedSize(300, 50)
         self.Usuario.setStyleSheet('font-size: 20px')
 
@@ -88,8 +88,19 @@ class App(QMainWindow):
         self.combobox_usuarios.setStyleSheet('font-size: 15px')
         self.carrega(tipo)
 
-    def carrega(self, tipo):
-        pasta = f"Banco/{tipo}"
+        def salvar():
+            FuncoesButtons.mostrar_racas(Pasta, self.combobox_usuarios.currentText())
+            self.escolha.close()
+
+        self.salvar_button = QPushButton('Mostrar pet', self.escolha)
+        self.salvar_button.setGeometry(60, 130, 200, 40)
+        self.salvar_button.setStyleSheet('font-size: 15px')
+        self.salvar_button.clicked.connect(salvar)
+
+        self.escolha.show()
+
+    def carrega(self, Pasta):
+        pasta = f"Banco/{Pasta}"
         coluna_alvo = 'Raça'
         arquivos = os.listdir(pasta)
         pilha_valores = []
@@ -99,36 +110,31 @@ class App(QMainWindow):
                 with open(os.path.join(pasta, arquivo), 'r', encoding='utf-8') as f:
                     reader = csv.DictReader(f)
 
-                    # Obtém os valores da coluna alvo e adiciona à pilha
                     for row in reader:
                         valor = row[coluna_alvo]
                         pilha_valores.append(valor)
-        tipos = set()  # Utilize um conjunto para armazenar os valores únicos
+        tipos = set()
         while not len(pilha_valores) == 0:
             valor = pilha_valores.pop()
-            tipos.add(valor)  # Adicione o valor ao conjunto
+            tipos.add(valor)
 
         for valor in tipos:
             self.combobox_usuarios.addItem(valor)
 
-        def salvar():
-            pass
-
-        self.salvar_button = QPushButton('Mostrar pet', self.escolha)
-        self.salvar_button.setGeometry(60, 130, 200, 40)
-        self.salvar_button.setStyleSheet('font-size: 15px')
-        self.salvar_button.clicked.connect(salvar)
-
-        self.escolha.show()
-
     def AbrirCaninos(self):
-        self.buttonClicked('Caninos')
+        global Pasta
+        Pasta = "Caninos"
+        self.buttonClicked(Pasta)
 
     def AbrirFelinos(self):
-        self.buttonClicked('Felinos')
+        global Pasta
+        Pasta = "Felinos"
+        self.buttonClicked(Pasta)
 
     def AbrirOutros(self):
-        self.buttonClicked('Outros')
+        global Pasta
+        Pasta = "Outros"
+        self.buttonClicked(Pasta)
 
     def ButtonCadastro(self):
         self.Cadastro = CadastroDePets.TelaCadastro()

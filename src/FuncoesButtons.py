@@ -1,7 +1,8 @@
 import webbrowser
 import os
-import csv
-from PyQt5.QtWidgets import QAction
+import Terminal
+import pandas as pd
+from PyQt5.QtWidgets import QAction, QApplication
 
 
 def AbrirSiteUnivassouras():
@@ -41,26 +42,43 @@ def menu(self):
     Pets.addAction(gatos)
 
 
-def LerBanco(tipo):
-    pasta = f"Banco/{tipo}"
-    coluna_alvo = "Nome"
-    arquivos = os.listdir(pasta)
-    pilha_valores = []
+def pesquisa_binaria(pilha, valor):
+    esquerda = 0
+    direita = len(pilha) - 1
 
+    while esquerda <= direita:
+        meio = (esquerda + direita) // 2
+        if pilha[meio]["Raça"] == valor:
+            return meio
+        elif pilha[meio]["Raça"] < valor:
+            esquerda = meio + 1
+        else:
+            direita = meio - 1
+
+    return -1
+
+
+def mostrar_racas(Pasta, raca):
+    pasta = f"Banco/{Pasta}"
+    arquivos = os.listdir(pasta)
+    pilha = []
     for arquivo in arquivos:
         if arquivo.endswith(".csv"):
-            with open(os.path.join(pasta, arquivo), 'r') as f:
-                reader = csv.DictReader(f)
+            arquivo_path = os.path.join(pasta, arquivo)
+            df = pd.read_csv(arquivo_path)
+            registros_filtrados = df[df["Raça"] == raca].to_dict("records")
+            pilha.extend(registros_filtrados)
+    # Ordena a pilha pelo nome do animal
+    pilha.sort(key=lambda x: x["Nome"])
 
-                # Obtém os valores da coluna alvo e adiciona à pilha
-                for row in reader:
-                    valor = row[coluna_alvo]
-                    pilha_valores.append(valor)
+    # Realiza a pesquisa binária para encontrar a raça
+    indice_raca = pesquisa_binaria(pilha, raca)
 
-    # Imprime os valores da coluna alvo (desempilhando)
-    tipos = ['']
-    while not len(pilha_valores) == 0:
-        valor = pilha_valores.pop()
-        for c in range(0, 21):
-            tipos.append(str(valor))
+    terminal_dialog = Terminal.TerminalDialog()
+    if indice_raca != -1:
+        for registro in pilha:
+            for coluna, valor in registro.items():
+                terminal_dialog.write_to_terminal(f"{coluna}: {valor}")
+            terminal_dialog.write_to_terminal("-" * 20)
+    terminal_dialog.exec_()
 
