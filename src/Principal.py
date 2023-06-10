@@ -90,13 +90,13 @@ class App(QMainWindow):
 
     def carrega(self, tipo):
         pasta = f"Banco/{tipo}"
-        coluna_alvo = "Nome"
+        coluna_alvo = 'Raça'
         arquivos = os.listdir(pasta)
         pilha_valores = []
 
         for arquivo in arquivos:
             if arquivo.endswith(".csv"):
-                with open(os.path.join(pasta, arquivo), 'r') as f:
+                with open(os.path.join(pasta, arquivo), 'r', encoding='utf-8') as f:
                     reader = csv.DictReader(f)
 
                     # Obtém os valores da coluna alvo e adiciona à pilha
@@ -114,7 +114,7 @@ class App(QMainWindow):
         def salvar():
             pass
 
-        self.salvar_button = QPushButton('Salvar', self.escolha)
+        self.salvar_button = QPushButton('Mostrar pet', self.escolha)
         self.salvar_button.setGeometry(60, 130, 200, 40)
         self.salvar_button.setStyleSheet('font-size: 15px')
         self.salvar_button.clicked.connect(salvar)
