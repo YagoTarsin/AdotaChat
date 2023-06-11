@@ -29,11 +29,12 @@ Um fluxograma foi criado para exemplificar a forma de funcionamento do sistema d
 
 ![Cadastro e adoção de animais](https://github.com/YagoTarsin/PetMatch/assets/125316134/0b6cc626-1825-46df-9bf3-539ff42729fe)
 
+ 
 <h3>Dependências:</h3> 
-
+ 
 **python 3** (Modelo de linguagem) 
 
-**biblioteca** PyQt5 (Interface gráfica) 
+**biblioteca PyQt5** (Interface gráfica) 
 
 **biblioteca csv** (Interações com arquivo .csv) 
 
