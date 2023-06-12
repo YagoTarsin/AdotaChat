@@ -82,7 +82,7 @@ Quando clicado em (menu > arquivo > Remover Pet):
 
 ![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/f6418332-38f7-46a4-94b1-aac05d6c2df8)
 
-Uma tela irá se abrir para remover um pet por motivos de adoção, desistência ou felcimento:
+Uma tela irá se abrir para remover um pet por motivos de adoção, desistência ou felecimento:
 
 ![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/f46c3e3e-c473-4a99-b320-af552d86e2a6)
 
