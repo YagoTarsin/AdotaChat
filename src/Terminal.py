@@ -12,7 +12,6 @@ class TerminalDialog(QDialog):
         icone = QIcon('imagens/icone.png')
         self.setWindowIcon(icone)
 
-
         # Definir fonte
         font = QFont("Consolas", 12)
         self.setFont(font)

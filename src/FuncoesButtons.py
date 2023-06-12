@@ -17,6 +17,14 @@ def menu(self):
 
     Arquivo = barra_menu.addMenu('📁 Arquivo')
 
+    Interessados = QAction('💡 Interessados', self)
+    Interessados.triggered.connect(self.RemoverPet)
+    Arquivo.addAction(Interessados)
+
+    CadInteressados = QAction('🙍‍ Novo Interessado', self)
+    CadInteressados.triggered.connect(self.RemoverPet)
+    Arquivo.addAction(CadInteressados)
+
     RmvPet = QAction('❌ Remover Pet', self)
     RmvPet.triggered.connect(self.RemoverPet)
     Arquivo.addAction(RmvPet)
