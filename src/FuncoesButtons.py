@@ -2,7 +2,7 @@ import webbrowser
 import os
 import Terminal
 import pandas as pd
-from PyQt5.QtWidgets import QAction, QApplication
+from PyQt5.QtWidgets import QAction
 
 
 def AbrirSiteUnivassouras():
@@ -44,7 +44,7 @@ def menu(self):
     Pets.addAction(gatos)
 
 
-def pesquisa_binaria(pilha, valor):
+def pesquisa_binaria_mostrar(pilha, valor):
     esquerda = 0
     direita = len(pilha) - 1
 
@@ -74,7 +74,7 @@ def mostrar_racas(Pasta, raca):
     pilha.sort(key=lambda x: x["Nome"])
 
     # Realiza a pesquisa binária para encontrar a raça
-    indice_raca = pesquisa_binaria(pilha, raca)
+    indice_raca = pesquisa_binaria_mostrar(pilha, raca)
 
     terminal_dialog = Terminal.TerminalDialog()
     if indice_raca != -1:
@@ -84,3 +84,36 @@ def mostrar_racas(Pasta, raca):
             terminal_dialog.write_to_terminal("-" * 20)
     terminal_dialog.exec_()
 
+
+def pesquisa_binaria_rmv(pilha, email, raca):
+    esquerda = 0
+    direita = len(pilha) - 1
+
+    while esquerda <= direita:
+        meio = (esquerda + direita) // 2
+        if pilha[meio]["Email"] == email and pilha[meio]["Raça"] == raca:
+            return meio
+        elif pilha[meio]["Email"] < email or (pilha[meio]["Email"] == email and pilha[meio]["Raça"] < raca):
+            esquerda = meio + 1
+        else:
+            direita = meio - 1
+
+    return -1
+
+
+def remover_linha_raca(Pasta, email, raca):
+    pasta = f"Banco/{Pasta}"
+    arquivos = os.listdir(pasta)
+
+    for arquivo in arquivos:
+        if arquivo.endswith(".csv"):
+            arquivo_path = os.path.join(pasta, arquivo)
+            df = pd.read_csv(arquivo_path)
+
+            registros = df.to_dict("records")
+            indice_remover = pesquisa_binaria_rmv(registros, email, raca)
+
+            if indice_remover != -1:
+                df.drop(indice_remover, inplace=True)
+                df.to_csv(arquivo_path, index=False)
+                return

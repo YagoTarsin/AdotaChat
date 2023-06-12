@@ -5,6 +5,7 @@ import os
 import csv
 import FuncoesButtons
 import CadastroDePets
+import RemoverPet
 
 
 class App(QMainWindow):
@@ -70,7 +71,8 @@ class App(QMainWindow):
         FuncoesButtons.menu(self)
 
     def RemoverPet(self):
-        print('funfa')
+        self.Remove = RemoverPet.TelaRemove()
+        self.Remove.show()
 
     def Abrir(self, site):
         FuncoesButtons.webbrowser.open(site)

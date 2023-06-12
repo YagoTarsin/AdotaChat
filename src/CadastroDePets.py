@@ -165,7 +165,7 @@ class TelaCadastro(QMainWindow):
         if nome == '' or cpf == '' or tel == '' or email == '' or endereco == '' or Tipo == '' \
                 or raca == '' or idade == '' or vacina == '' or cor == '' or porte == '':
             self.erro = QLabel('Preencha todos os campos', self)
-            self.erro.move(185, 625)
+            self.erro.move(185, 600)
             self.erro.setStyleSheet('font-size: 20px; color: red')
             self.erro.setFixedWidth(400)
             self.erro.show()
