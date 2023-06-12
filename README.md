@@ -178,4 +178,12 @@ No menu Pets, temos 3 opções (Sobre Cães, Sobre Gatos, Sobre Animais). Quando
 
 ![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/4ef57e7b-9f30-4ea6-95d0-6be81ca27ad0)
 
+## Tratamento de erros:
 
+- Tratamento para usuario preencher todos os campos (O codigo é parecido em todas as telas de cadastro):
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/3a3c2170-edfe-4076-85df-e4ecd42c87dd)
+
+- Tratamento de Nome e CPF:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/30e124dc-3da1-4a8d-b77c-cfc91f57b37f)
