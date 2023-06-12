@@ -190,4 +190,4 @@ No menu Pets, temos 3 opções (Sobre Cães, Sobre Gatos, Sobre Animais). Quando
 
 # Considerações finais:
 
-Houve muito empenho pela dupla para a criação do app, algumas dificuldades surgiram tanto pessoais quanto em relação ao tempo. Alguns detalhes podem ter passados despercebidos, e algumas exigências do professor se tornoaram difíceis de aplicar. Espero que o grande professor Marcio Garrido goste do programa e tenha orgulho da dupla que muito se empenhou para o desenvolvimento do app.
+Houve muito empenho pela dupla para a criação do app, algumas dificuldades surgiram tanto pessoais quanto em relação ao tempo. Alguns detalhes podem ter passados despercebidos, e algumas exigências do professor se tornaram difíceis de aplicar. Espero que o grande professor Marcio Garrido goste do programa e tenha orgulho da dupla que muito se empenhou para o desenvolvimento do app.
