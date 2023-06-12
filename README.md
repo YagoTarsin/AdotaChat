@@ -29,8 +29,7 @@ Um fluxograma foi criado para exemplificar a forma de funcionamento do sistema d
 
 ![Cadastro e adoção de animais](https://github.com/YagoTarsin/PetMatch/assets/125316134/0b6cc626-1825-46df-9bf3-539ff42729fe)
 
- 
-<h3>Dependências:</h3> 
+# Dependências:
  
 - **python 3** (Modelo de linguagem) 
 - **biblioteca PyQt5** (Interface gráfica) 
@@ -38,5 +37,80 @@ Um fluxograma foi criado para exemplificar a forma de funcionamento do sistema d
 - **biblioteca pandas** (Tratamento de dados) 
 - **biblioteca webbrowser** (Abrir links web)
 
-Use o seguinte comando para instalação: **pip install -r requirements.txt**
+Use o seguinte comando para instalação: `pip install -r requirements.txt`
+
+# Uso:
+
+PetMatch é um sistema simples de cadastros de Pets para adoção/doação de animais.
+
+## Interface Principal:
+
+A interface principal é composta por 1 menu e 5 botões:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/79b45342-97bc-43ad-b01e-3d6d4ee266ec)
+
+## Cadastro de animais:
+
+Quando clicado no botão "Cadastro de animais" abrirá uma tela de cadastro para todas as informações necessárias:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/11a4c38a-2e59-42a3-8c51-3135ec5b5214)
+
+## Caninos, Felinos e Outros:
+
+Os 3 botões da direita são para mostrar as raças disponíveis de cada espécie, por exemplo quando escolho "Caninos" essa tela abrirá:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/ae1c1dab-52a3-46c2-a992-2dc276fdfb5c)
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/4609fb37-090b-461b-be07-71293bacd3ea)
+
+
+## Terminal de informações:
+
+Quando escolhido algumas das opções demonstrado acima, uma tela de terminal mostrará todas as informações de contato da pessoa que deseja doar o pet da raça especifica:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/b34362d3-06d7-4cc7-b764-98a55137d189)
+
+## Site Univassouras:
+
+Quando clicado na logo da Universidade de vassouras, será redirecionado para a pagina principal do site da Univassouras:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/40549882-843f-4be7-bea5-d055cf853849)
+
+## Arquivo (Remover Pet)
+
+Quando clicado em (menu > arquivo > Remover Pet):
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/f6418332-38f7-46a4-94b1-aac05d6c2df8)
+
+Uma tela irá se abrir para remover um pet por motivos de adoção, desistência ou felcimento:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/f46c3e3e-c473-4a99-b320-af552d86e2a6)
+
+## Arquivo (Novo interessado):
+
+Quando clicado em (menu > arquivo > Novo Interessado):
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/f6418332-38f7-46a4-94b1-aac05d6c2df8)
+
+Uma tela irá abrir para cadastrar os dados da pessoa interessada em um pet por espécie:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/47d13e81-c390-499b-9ad9-f72e8ab55ad3)
+
+## Arquivo (Interessados)
+
+Quando clicado em (menu > arquivo > Interessados):
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/f6418332-38f7-46a4-94b1-aac05d6c2df8)
+
+Uma tela de terminal irá abrir mostrando todas as pessoas interessadas em um pet com seus repectivos dados de contato e interesse:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/a1b02088-a94f-49a7-9ae8-0de51bfae526)
+
+## Pets
+
+No menu Pets, temos 3 opções (Sobre Cães, Sobre Gatos, Sobre Animais). Quando clicado em um dessas opções você será redirecionado para sites interessantes que dão conhecimentos sobre os respectivos animais. A ideia é que os operadores do app saibam com o que estão lidando.
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/49bd787c-5b5a-4317-b340-e71fd2116dc6)
+
+# Sobre o código:
 
