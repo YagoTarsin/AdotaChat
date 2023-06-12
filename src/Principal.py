@@ -79,6 +79,9 @@ class App(QMainWindow):
         self.CadastroInteressados = Interessados.TelaAdcInteressados()
         self.CadastroInteressados.show()
 
+    def MostrarInteressados(self):
+        FuncoesButtons.Ler_Interessados('Banco/Interessados')
+
     def Abrir(self, site):
         FuncoesButtons.webbrowser.open(site)
 
@@ -110,13 +113,13 @@ class App(QMainWindow):
         self.combobox_usuarios.setStyleSheet('font-size: 15px')
         self.carrega(tipo)
 
-        def salvar():
+        def mostrar():
             FuncoesButtons.mostrar_racas(Pasta, self.combobox_usuarios.currentText())
 
         self.salvar_button = QPushButton('Mostrar pet', self.escolha)
         self.salvar_button.setGeometry(60, 130, 200, 40)
         self.salvar_button.setStyleSheet('font-size: 15px')
-        self.salvar_button.clicked.connect(salvar)
+        self.salvar_button.clicked.connect(mostrar)
         self.escolha.show()
 
     def carrega(self, Pasta):

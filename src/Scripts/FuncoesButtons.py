@@ -18,7 +18,7 @@ def menu(self):
     Arquivo = barra_menu.addMenu('📁 Arquivo')
 
     Interessados = QAction('💡 Interessados', self)
-    Interessados.triggered.connect(self.RemoverPet)
+    Interessados.triggered.connect(self.MostrarInteressados)
     Arquivo.addAction(Interessados)
 
     CadInteressados = QAction('🙍‍ Novo Interessado', self)
@@ -117,3 +117,26 @@ def remover_linha_raca(Pasta, email, raca):
                 df.drop(indice_remover, inplace=True)
                 df.to_csv(arquivo_path, index=False)
                 return
+
+
+def Mostrar_Interessados(arquivo_path):
+    df = pd.read_csv(arquivo_path)
+
+    terminal_dialog = PetMatch.src.Terminal.TerminalDialog()
+
+    for _, row in df.iterrows():
+        for coluna, valor in row.items():
+            terminal_dialog.write_to_terminal(f"{coluna}: {valor}")
+        terminal_dialog.write_to_terminal("-" * 20)
+
+    terminal_dialog.exec_()
+
+
+def Ler_Interessados(pasta):
+    arquivos = os.listdir(pasta)
+
+    for arquivo in arquivos:
+        if arquivo.endswith(".csv"):
+            arquivo_path = os.path.join(pasta, arquivo)
+            Mostrar_Interessados(arquivo_path)
+

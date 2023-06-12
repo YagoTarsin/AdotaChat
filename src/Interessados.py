@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import QPushButton, QMainWindow, QLabel, QLineEdit, QComboBox
 from PyQt5.QtGui import QPixmap, QIcon
 import csv
+import os
+import pandas as pd
 
 
 class TelaAdcInteressados(QMainWindow):
@@ -106,3 +108,5 @@ class TelaAdcInteressados(QMainWindow):
         tipos = ['', 'Caninos', 'Felinos', 'Outros']
         for tipo in range(len(tipos)):
             self.combobox_tipo.addItem(tipos[tipo])
+
+
