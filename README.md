@@ -112,5 +112,46 @@ No menu Pets, temos 3 opções (Sobre Cães, Sobre Gatos, Sobre Animais). Quando
 
 ![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/49bd787c-5b5a-4317-b340-e71fd2116dc6)
 
-# Sobre o código:
+# Hierarquia de arquivos:
+
+**1. Em seu diretório principal temos 2 arquivos e 1 pasta:**
+
+- README.md (Arquivo README)
+- requirements.txt (Arquivo para instalação das dependências)
+- src (Pasta origem do app)
+
+**2. Dentro do diretório "src" temos o diretório principal do app, composta por 5 arquivos e 3 diretórios**
+
+- Principal.py (Arquivo python principal do app, onde rodamos o código inicialmente e nos mostra a interface principal)
+- Cadastro.py (Arquivo python que abre a tela de cadastro de pets)
+- RemoverPet.py (Arquivo python que abre a tela de remoção de pets)
+- Terminal.py (Arquivo python que abre as telas de terminal para mostrar interessados e dados de doadores)
+- Interessados.py (Arquivo python que abre a tela de cadastro de pessoas interessadas em adotar um pet)
+- Imagens (Diretório onde ficam as imagens usadas no app)
+- Banco (Diretório onde ficam os arquivos CSV)
+- Scripts (Diretorio onde ficam arquivos .py paa scripts)
+
+**3. Dentro da pasta "imagens" temos 7 arquivos PNG:**
+
+- Cadastrar um novo pet.png (Imagem para botão de cadastro de pets)
+- Gatos.png (Imagem para botão de felinos)
+- caninos.png (imagem para botão de Caninos)
+- Outros.png (Imagem para botão de Outros)
+- univassouras.png (Imagem para botão do site de vassouras)
+- fundo_cadastro (Imagem de fundo da tela de cadastro)
+- icone.png (Icone do app)
+
+**4. Dentro da pasta "Banco" temos 4 pastas:**
+
+- Felinos (Onde são salvos os arquivos .csv de doadores de felinos)
+- Caninos (Onde são salvos os arquivos .csv de doadores de caninos)
+- Outros (Onde são salvos os arquivos .csv de doadores de outros tipos de animais)
+- Interessados (Onde são salvos os arquivos .csv de pessoas interessadas)
+
+**5. Dentro da pasta "Scripts" temos 1 arquivo:**
+
+- FuncoesButtons.py (Arquivo python que executa funções necessária para tratamento de dados dentre outros)
+
+# Código:
+
 
