@@ -1,6 +1,4 @@
-  
-![campus_marica](https://github.com/YagoTarsin/PetMatch/assets/125316134/8d54302b-77da-4571-8c29-33e5524a61b8)
-
+  ![campus_marica](https://github.com/YagoTarsin/PetMatch/assets/125316134/3fc4ac24-6883-4096-a319-143fd04e76a2)
  
 
 **Curso:** Engenharia de software	 
@@ -11,16 +9,10 @@
 
 **Professor:** [Márcio Alexandre Dias Garrido](https://github.com/marciogarridoLaCop) 
 
- 
+**Participantes:** _Angélica Gomes da Silva_ – 202211538  e _Yago Guimarães Tavares_ – 202211459 
+##
 
- 
-**Participantes:** _Angélica Gomes da Silva_ – 202211538  e _Yago Tavares_ – 20 
- 
-
- 
 **PROJETO: Sistema de Cadastro e Adoção de Animais** 
-
- 
 
 A Universidade de Vassouras do Campus 1 foi convidada pela prefeitura de Maricá para promover uma solução tecnológica em um dos problemas sociais da cidade, o abandono de animais. Mesmo considerado crime (O abandono de animais é crime, previsto na Lei de Crimes Ambientais - Lei Federal n° 9.605 de 1998), e notório que o índice de abandono vem crescendo a cada ano. 
 
@@ -34,9 +26,18 @@ Os alunos anotaram atentamente a todas as observações, criaram o fluxograma do
 
 Um fluxograma foi criado para exemplificar a forma de funcionamento do sistema desde o cadastro até o seu momento final que se dá por meio da adoção. Veja abaixo: 
 
- 
+
 ![Cadastro e adoção de animais](https://github.com/YagoTarsin/PetMatch/assets/125316134/0b6cc626-1825-46df-9bf3-539ff42729fe)
 
  
-
+<h3>Dependências:</h3> 
  
+**python 3** (Modelo de linguagem) 
+
+**biblioteca PyQt5** (Interface gráfica) 
+
+**biblioteca csv** (Interações com arquivo .csv) 
+
+**biblioteca pandas** (Tratamento de dados) 
+
+**biblioteca webbrowser** (Abrir links web) 
