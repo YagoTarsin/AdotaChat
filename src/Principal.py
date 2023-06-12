@@ -90,13 +90,12 @@ class App(QMainWindow):
 
         def salvar():
             FuncoesButtons.mostrar_racas(Pasta, self.combobox_usuarios.currentText())
-            self.escolha.close()
+            #self.escolha.close()
 
         self.salvar_button = QPushButton('Mostrar pet', self.escolha)
         self.salvar_button.setGeometry(60, 130, 200, 40)
         self.salvar_button.setStyleSheet('font-size: 15px')
         self.salvar_button.clicked.connect(salvar)
-
         self.escolha.show()
 
     def carrega(self, Pasta):

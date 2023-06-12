@@ -16,10 +16,16 @@ class TerminalDialog(QDialog):
         # Definir layout
         layout = QVBoxLayout()
         self.text_edit = QTextEdit()
-        self.text_edit.setStyleSheet("QTextEdit { background-color: #1E1E1E; color: #EDEDED; border: none; font-size: 20px}")
+        self.text_edit.setStyleSheet(
+            "QTextEdit {"
+            "background-color: #1E1E1E;"
+            "color: #EDEDED;"
+            "border: none;"
+            "font-size: 20px"
+            "}"
+        )
         layout.addWidget(self.text_edit)
         self.setLayout(layout)
 
     def write_to_terminal(self, text):
         self.text_edit.append(text)
-
