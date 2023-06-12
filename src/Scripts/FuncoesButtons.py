@@ -1,6 +1,6 @@
 import webbrowser
 import os
-import Terminal
+import PetMatch.src.Terminal
 import pandas as pd
 from PyQt5.QtWidgets import QAction
 
@@ -22,7 +22,7 @@ def menu(self):
     Arquivo.addAction(Interessados)
 
     CadInteressados = QAction('🙍‍ Novo Interessado', self)
-    CadInteressados.triggered.connect(self.RemoverPet)
+    CadInteressados.triggered.connect(self.CadasInteressados)
     Arquivo.addAction(CadInteressados)
 
     RmvPet = QAction('❌ Remover Pet', self)
@@ -76,7 +76,7 @@ def mostrar_racas(Pasta, raca):
     # Realiza a pesquisa binária para encontrar a raça
     indice_raca = pesquisa_binaria_mostrar(pilha, raca)
 
-    terminal_dialog = Terminal.TerminalDialog()
+    terminal_dialog = PetMatch.src.Terminal.TerminalDialog()
     if indice_raca != -1:
         for registro in pilha:
             for coluna, valor in registro.items():

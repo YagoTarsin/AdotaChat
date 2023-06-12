@@ -183,7 +183,7 @@ class TelaCadastro(QMainWindow):
             caminho_arquivo = f'Banco/{Tipo}/{email}.csv'
             dados = {
                 'Nome': nome, 'CPF': cpf, 'Telefone': tel, 'Email': email, 'Endereço': endereco,
-                'Raça': raca, 'Tipo': Tipo, 'Idade': idade, 'Vacina': vacina, 'Situação': cor, 'Porte': porte
+                'Raça': raca, 'Tipo': Tipo, 'Idade': idade, 'Vacina': vacina, 'Coloração': cor, 'Porte': porte
             }
             with open(f'{caminho_arquivo}', 'a', newline='',  encoding='utf-8') as arquivo_csv:
                 writer = csv.DictWriter(arquivo_csv, fieldnames=dados.keys())

@@ -1,9 +1,9 @@
 from PyQt5.QtWidgets import QPushButton, QMainWindow, QLabel, QLineEdit, QComboBox
 from PyQt5.QtGui import QPixmap, QIcon
-from PetMatch.src.Scripts import FuncoesButtons
+import csv
 
 
-class TelaRemove(QMainWindow):
+class TelaAdcInteressados(QMainWindow):
     def __init__(self):
         super().__init__()
         self.erro = None
@@ -38,23 +38,33 @@ class TelaRemove(QMainWindow):
         self.email_edit.setFixedWidth(200)
         self.email_edit.setStyleSheet('font-size: 15px')
 
-        self.raca_label = QLabel('Raça:', self)
-        self.raca_label.move(300, 80)
-        self.raca_label.setStyleSheet('font-size: 20px')
+        self.tel_label = QLabel('Tel:', self)
+        self.tel_label.move(320, 80)
+        self.tel_label.setStyleSheet('font-size: 20px')
 
-        self.raca_edit = QLineEdit(self)
-        self.raca_edit.move(365, 80)
-        self.raca_edit.setFixedSize(230, 30)
-        self.raca_edit.setFixedWidth(200)
-        self.raca_edit.setStyleSheet('font-size: 15px')
+        self.tel_edit = QLineEdit(self)
+        self.tel_edit.move(365, 80)
+        self.tel_edit.setFixedSize(230, 30)
+        self.tel_edit.setFixedWidth(200)
+        self.tel_edit.setStyleSheet('font-size: 15px')
+
+        self.nome_label = QLabel('Nome:', self)
+        self.nome_label.move(15, 140)
+        self.nome_label.setStyleSheet('font-size: 20px')
+
+        self.nome_edit = QLineEdit(self)
+        self.nome_edit.move(85, 140)
+        self.nome_edit.setFixedSize(230, 30)
+        self.nome_edit.setFixedWidth(200)
+        self.nome_edit.setStyleSheet('font-size: 15px')
 
         self.tipo_label = QLabel('Tipo:', self)
-        self.tipo_label.move(180, 140)
+        self.tipo_label.move(310, 140)
         self.tipo_label.setStyleSheet('font-size: 20px')
 
         self.combobox_tipo = QComboBox(self)
-        self.combobox_tipo.move(230, 140)
-        self.combobox_tipo.setFixedWidth(175)
+        self.combobox_tipo.move(365, 140)
+        self.combobox_tipo.setFixedWidth(200)
         self.combobox_tipo.setStyleSheet('font-size: 15px')
         self.carregar_tipo()
 
@@ -65,9 +75,10 @@ class TelaRemove(QMainWindow):
 
     def salvar(self):
         email = self.email_edit.text()
-        raca = self.raca_edit.text()
+        tel = self.tel_edit.text()
+        nome = self.nome_edit.text()
         Tipo = self.combobox_tipo.currentText()
-        if email == '' or raca == '' or Tipo == '':
+        if email == '' or tel == '' or Tipo == '' or nome == '':
             self.erro = QLabel('Preencha todos os campos', self)
             self.erro.move(185, 250)
             self.erro.setStyleSheet('font-size: 20px; color: red')
@@ -79,8 +90,17 @@ class TelaRemove(QMainWindow):
             except:
                 pass
 
-            FuncoesButtons.remover_linha_raca(Tipo, email, raca)
-            self.email_edit.clear(), self.raca_edit.clear(), self.combobox_tipo.setCurrentIndex(0)
+        self.email_edit.clear(), self.tel_edit.clear(), self.nome_edit.clear(), self.combobox_tipo.setCurrentIndex(0)
+
+        caminho_arquivo = f'Banco/Interessados/Interessados.csv'
+        dados = {
+            'Nome': nome, 'Telefone': tel, 'Email': email, 'Tipo': Tipo
+        }
+        with open(f'{caminho_arquivo}', 'a', newline='', encoding='utf-8') as arquivo_csv:
+            writer = csv.DictWriter(arquivo_csv, fieldnames=dados.keys())
+            if arquivo_csv.tell() == 0:
+                writer.writeheader()
+            writer.writerow(dados)
 
     def carregar_tipo(self):
         tipos = ['', 'Caninos', 'Felinos', 'Outros']

@@ -6,6 +6,7 @@ import csv
 from PetMatch.src.Scripts import FuncoesButtons
 import CadastroDePets
 import RemoverPet
+import Interessados
 
 
 class App(QMainWindow):
@@ -73,6 +74,10 @@ class App(QMainWindow):
     def RemoverPet(self):
         self.Remove = RemoverPet.TelaRemove()
         self.Remove.show()
+
+    def CadasInteressados(self):
+        self.CadastroInteressados = Interessados.TelaAdcInteressados()
+        self.CadastroInteressados.show()
 
     def Abrir(self, site):
         FuncoesButtons.webbrowser.open(site)
