@@ -69,8 +69,23 @@ class App(QMainWindow):
     def menu(self):
         FuncoesButtons.menu(self)
 
-    def teste(self):
-        print('Click')
+    def RemoverPet(self):
+        print('funfa')
+
+    def Abrir(self, site):
+        FuncoesButtons.webbrowser.open(site)
+
+    def AbrirSiteCaninos(self):
+        site = 'https://www.patasdacasa.com.br/noticia/curiosidades-sobre-cachorros-40-coisas-que-voce-pode-aprender-a-respeito-dos-caninos'
+        self.Abrir(site)
+
+    def AbrirSiteFelinos(self):
+        site = 'https://www.hospvetsantamarinha.com/blog/60-curiosidades-gatos/'
+        self.Abrir(site)
+
+    def AbrirSiteOutros(self):
+        site = 'https://blog.cobasi.com.br/animais-domesticos/'
+        self.Abrir(site)
 
     def buttonClicked(self, tipo):
         self.escolha = QDialog()

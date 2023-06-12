@@ -17,22 +17,22 @@ def menu(self):
 
     Arquivo = barra_menu.addMenu('📁 Arquivo')
 
-    meus_pets = QAction('❌ Remover Pet', self)
-    meus_pets.triggered.connect(self.teste)
-    Arquivo.addAction(meus_pets)
+    RmvPet = QAction('❌ Remover Pet', self)
+    RmvPet.triggered.connect(self.RemoverPet)
+    Arquivo.addAction(RmvPet)
 
     Pets = barra_menu.addMenu('🐾 Pets')
 
     cachorro = QAction('🐕 Sobre os cães', self)
-    cachorro.triggered.connect(self.teste)
+    cachorro.triggered.connect(self.AbrirSiteCaninos)
     Pets.addAction(cachorro)
 
     gatos = QAction('🐈 Sobre os gatos', self)
-    gatos.triggered.connect(self.teste)
+    gatos.triggered.connect(self.AbrirSiteFelinos)
     Pets.addAction(gatos)
 
     gatos = QAction('🦔 Outros animais', self)
-    gatos.triggered.connect(self.teste)
+    gatos.triggered.connect(self.AbrirSiteOutros)
     Pets.addAction(gatos)
 
 
