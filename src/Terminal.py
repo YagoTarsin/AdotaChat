@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QDialog, QTextEdit, QVBoxLayout
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QIcon
 
 
 class TerminalDialog(QDialog):
@@ -8,6 +8,10 @@ class TerminalDialog(QDialog):
 
         self.setWindowTitle('Terminal')
         self.setGeometry(100, 100, 800, 600)
+
+        icone = QIcon('imagens/icone.png')
+        self.setWindowIcon(icone)
+
 
         # Definir fonte
         font = QFont("Consolas", 12)

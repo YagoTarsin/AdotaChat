@@ -8,15 +8,15 @@ class TelaCadastro(QMainWindow):
         super().__init__()
         self.erro = None
         self.setWindowTitle('Cadastro 📋')
-        self.setGeometry(1100, 100, 600, 800)
-        self.setMinimumSize(600, 800)
-        self.setMaximumSize(600, 800)
+        self.setGeometry(1100, 100, 600, 750)
+        self.setMinimumSize(600, 750)
+        self.setMaximumSize(600, 750)
 
         icone = QIcon('imagens/icone.png')
         self.setWindowIcon(icone)
 
         self.background_label = QLabel(self)
-        self.background_label.setGeometry(0, 0, 600, 800)
+        self.background_label.setGeometry(0, 0, 600, 750)
         pixmap = QPixmap('imagens/fundo_cadastro.png')
         self.background_label.setPixmap(pixmap)
         self.background_label.setScaledContents(True)
