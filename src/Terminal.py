@@ -9,7 +9,7 @@ class TerminalDialog(QDialog):
         self.setWindowTitle('Terminal')
         self.setGeometry(100, 100, 800, 600)
 
-        icone = QIcon('imagens/icone.png')
+        icone = QIcon('Imagens/icone.png')
         self.setWindowIcon(icone)
 
         # Definir fonte

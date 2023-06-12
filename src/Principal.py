@@ -3,7 +3,7 @@ from PyQt5.QtGui import QIcon, QColor
 from PyQt5.QtCore import Qt
 import os
 import csv
-import FuncoesButtons
+from PetMatch.src.Scripts import FuncoesButtons
 import CadastroDePets
 import RemoverPet
 
@@ -16,7 +16,7 @@ class App(QMainWindow):
         self.setMinimumSize(969, 760)
         self.setMaximumSize(969, 760)
 
-        icone = QIcon('imagens/icone.png')
+        icone = QIcon('Imagens/icone.png')
         self.setWindowIcon(icone)
 
         fundo_vinho = QColor(80, 0, 0)
@@ -28,7 +28,7 @@ class App(QMainWindow):
         cadastro_button.setStyleSheet("background-color: transparent")
         cadastro_button.setGeometry(0, 35, 269, 630)
         cadastro_button.clicked.connect(self.ButtonCadastro)
-        button_icon = QIcon('imagens/Cadastrar um novo pet.png')
+        button_icon = QIcon('Imagens/Cadastrar um novo pet.png')
         cadastro_button.setIcon(button_icon)
         cadastro_button.setIconSize(cadastro_button.size())
 
@@ -36,7 +36,7 @@ class App(QMainWindow):
         caninos_button.setStyleSheet("background-color: transparent")
         caninos_button.setGeometry(269, 35, 700, 210)
         caninos_button.clicked.connect(self.AbrirCaninos)
-        button_icon = QIcon('imagens/cachorros.png')
+        button_icon = QIcon('Imagens/cachorros.png')
         caninos_button.setIcon(button_icon)
         caninos_button.setIconSize(caninos_button.size())
 
@@ -44,7 +44,7 @@ class App(QMainWindow):
         felinos_button.setStyleSheet("background-color: transparent")
         felinos_button.setGeometry(269, 245, 700, 210)
         felinos_button.clicked.connect(self.AbrirFelinos)
-        button_icon2 = QIcon('imagens/Gatos.png')
+        button_icon2 = QIcon('Imagens/Gatos.png')
         felinos_button.setIcon(button_icon2)
         felinos_button.setIconSize(felinos_button.size())
 
@@ -52,7 +52,7 @@ class App(QMainWindow):
         outros_button.setStyleSheet("background-color: transparent")
         outros_button.setGeometry(269, 455, 700, 210)
         outros_button.clicked.connect(self.AbrirOutros)
-        button_icon3 = QIcon('imagens/Outros.png')
+        button_icon3 = QIcon('Imagens/Outros.png')
         outros_button.setIcon(button_icon3)
         outros_button.setIconSize(outros_button.size())
 
@@ -61,7 +61,7 @@ class App(QMainWindow):
         univassouras_button.setGeometry(165, 680, 630, 70)
         univassouras_button.setCursor(Qt.PointingHandCursor)
         univassouras_button.clicked.connect(self.ButtonVassouras)
-        button_icon4 = QIcon('imagens/univassouras.png')
+        button_icon4 = QIcon('Imagens/univassouras.png')
         univassouras_button.setIcon(button_icon4)
         univassouras_button.setIconSize(univassouras_button.size())
 
