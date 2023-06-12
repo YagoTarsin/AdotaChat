@@ -187,3 +187,7 @@ No menu Pets, temos 3 opções (Sobre Cães, Sobre Gatos, Sobre Animais). Quando
 - Tratamento de Nome e CPF:
 
 ![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/30e124dc-3da1-4a8d-b77c-cfc91f57b37f)
+
+# Considerações finais:
+
+Houve muito empenho pela dupla para a criação do app, algumas dificuldades surgiram tanto pessoais quanto em relação ao tempo. Alguns detalhes podem ter passados despercebidos, e algumas exigências do professor se tornoaram dificil de aplicar. Espero que o grande professor Marcio Garrido goste do programa e tenha orgulho da dupla que muito se empenhou para o desenvolvimento do app.
