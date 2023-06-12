@@ -32,12 +32,11 @@ Um fluxograma foi criado para exemplificar a forma de funcionamento do sistema d
  
 <h3>Dependências:</h3> 
  
-**python 3** (Modelo de linguagem) 
+- **python 3** (Modelo de linguagem) 
+- **biblioteca PyQt5** (Interface gráfica) 
+- **biblioteca csv** (Interações com arquivo .csv) 
+- **biblioteca pandas** (Tratamento de dados) 
+- **biblioteca webbrowser** (Abrir links web)
 
-**biblioteca PyQt5** (Interface gráfica) 
+Use o seguinte comando para instalação: **pip install -r requirements.txt**
 
-**biblioteca csv** (Interações com arquivo .csv) 
-
-**biblioteca pandas** (Tratamento de dados) 
-
-**biblioteca webbrowser** (Abrir links web) 
