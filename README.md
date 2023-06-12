@@ -154,4 +154,28 @@ No menu Pets, temos 3 opções (Sobre Cães, Sobre Gatos, Sobre Animais). Quando
 
 # Código:
 
+## Pilhas:
+
+- Uso de pilhas para carregar combobox:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/e11744d7-eb20-4aed-9206-2136d06765a6)
+
+- Uso de pilhas para mostrar raças disponíveis:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/88fff771-19f4-4a26-9a14-6491e9780cae)
+
+- Uso de pilhas para remover pet
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/e3b3c1be-4201-4d92-a692-f5d3686ee6d8)
+
+## Pesquisa binária:
+
+- Pesquisa binária para pesquisar raça especifica de cada .csv
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/b671ab86-debd-4c39-979e-87895664bc1e)
+
+- Pesquisa binária para pesquisar por raça e email:
+
+![image](https://github.com/YagoTarsin/PetMatch/assets/102929131/4ef57e7b-9f30-4ea6-95d0-6be81ca27ad0)
+
 
