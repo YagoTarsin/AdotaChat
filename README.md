@@ -9,9 +9,9 @@
 
 **Professor:** [Márcio Alexandre Dias Garrido](https://github.com/marciogarridoLaCop) 
 
-**Participantes:** _Angélica Gomes da Silva_ – 202211538  e _Yago Tavares_ – 20 
+**Participantes:** _Angélica Gomes da Silva_ – 202211538  e _Yago Guimarães Tavares_ – 202211459 
 ##
- 
+
 **PROJETO: Sistema de Cadastro e Adoção de Animais** 
 
 A Universidade de Vassouras do Campus 1 foi convidada pela prefeitura de Maricá para promover uma solução tecnológica em um dos problemas sociais da cidade, o abandono de animais. Mesmo considerado crime (O abandono de animais é crime, previsto na Lei de Crimes Ambientais - Lei Federal n° 9.605 de 1998), e notório que o índice de abandono vem crescendo a cada ano. 
